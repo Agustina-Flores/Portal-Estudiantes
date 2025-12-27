@@ -1,0 +1,156 @@
+{
+  "estudiantes": [
+    {
+      "id": "1",
+      "nombre": "Marcelo Lopez",
+      "curso": [
+        "1",
+        "3",
+        "5"
+      ],
+      "promedio": 95,
+      "imagen": "http://192.168.100.104:3001/uploads/1764895197768_foto.jpg"
+    },
+    {
+      "id": "2",
+      "nombre": "Luz Martinez",
+      "curso": [
+        "2",
+        "4",
+        "6"
+      ],
+      "promedio": 75,
+      "imagen": "http://192.168.100.104:3001/uploads/1764896605451_foto.jpg"
+    },
+    {
+      "id": "3",
+      "nombre": "Marcela Herrera",
+      "curso": [
+        "1",
+        "2",
+        "3",
+        "10"
+      ],
+      "promedio": 90,
+      "edad": 34
+    },
+    {
+      "id": "4",
+      "nombre": "Luis Perez",
+      "curso": [
+        "13",
+        "7"
+      ],
+      "promedio": 80,
+      "imagen": "http://192.168.100.107:3001/uploads/1765174598307_foto.jpg"
+    }
+  ],
+  "cursos": [
+    {
+      "id": "1",
+      "nombre": "React ",
+      "descripcion": "Profundización en hooks, performance, optimización y patrones avanzados de React.",
+      "duracion": "6 semanas",
+      "icono": "react",
+      "programa": [
+      "Introducción a Hooks",
+      "UseEffect avanzado",
+      "Render Performance",
+      "Patrones de composición"
+    ],
+      "docente": "Juan Pérez",
+      "horarios": "Lunes y Miércoles - 18:00 a 20:00"     
+    },
+    {
+      "id": "2",
+      "nombre": "Angular",
+      "descripcion": "Fundamentos de Angular: módulos, servicios, componentes y manejo de rutas.",
+      "duracion": "5 semanas",
+      "icono": "angular"
+    },
+    {
+      "id": "3",
+      "nombre": "C#",
+      "descripcion": "Curso orientado a objetos con C#, sintaxis, clases, interfaces y manejo de datos.",
+      "duracion": "6 semanas",
+      "icono": "csharp"
+    },
+    {
+      "id": "4",
+      "nombre": "Node.js",
+      "descripcion": "Backend con Node.js: Express, rutas, middlewares y conexión a base de datos.",
+      "duracion": "5 semanas",
+      "icono": "nodejs"
+    },
+    {
+      "id": "5",
+      "nombre": "Java",
+      "descripcion": "Programación orientada a objetos con Java, colecciones, excepciones y archivos.",
+      "duracion": "8 semanas",
+      "icono": "java"
+    },
+    {
+      "id": "6",
+      "nombre": "Sql Server",
+      "descripcion": "Consultas SQL, creación de tablas, stored procedures y administración básica.",
+      "duracion": "4 semanas",
+      "icono": "sql"
+    },
+    {
+      "id": "7",
+      "nombre": "Python",
+      "descripcion": "Fundamentos de Python: sintaxis, librerías básicas y automatización.",
+      "duracion": "5 semanas",
+      "icono": "python"
+    },
+    {
+      "id": "8",
+      "nombre": "Mongo DB",
+      "descripcion": "Bases NoSQL: colecciones, documentos y consultas con MongoDB.",
+      "duracion": "3 semanas",
+      "icono": "mongo"
+    },
+    {
+      "id": "9",
+      "nombre": "Matematicas",
+      "descripcion": "Principios matemáticos aplicados a programación y lógica computacional.",
+      "duracion": "6 semanas",
+      "icono": "math"
+    },
+    {
+      "id": "10",
+      "nombre": "Ingles ",
+      "descripcion": "Nivel inicial con foco en comprensión y comunicación básica.",
+      "duracion": "8 semanas",
+      "icono": "english"
+    },
+    {
+      "id": "11",
+      "nombre": "PostgreSQL",
+      "descripcion": "Consultas SQL, triggers, funciones y administración básica en PostgreSQL.",
+      "duracion": "5 semanas",
+      "icono": "postgresql"
+    },
+    {
+      "id": "12",
+      "nombre": "Git Hub",
+      "descripcion": "Uso de Git y GitHub: ramas, merge, pull requests y buenas prácticas.",
+      "duracion": "3 semanas",
+      "icono": "git"
+    },
+    {
+      "id": "13",
+      "nombre": "Javascript",
+      "descripcion": "Lógica de programación con JavaScript, funciones, arrays y eventos.",
+      "duracion": "7 semanas",
+      "icono": "js"
+    },
+    {
+      "id": "14",
+      "nombre": "GO",
+      "descripcion": "lenguaje",
+      "duracion": "8 semanas",
+      "icono": "go"
+    }
+  ]
+}
