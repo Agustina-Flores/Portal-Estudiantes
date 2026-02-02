@@ -59,10 +59,10 @@ Este proyecto fue desarrollado como práctica de **frontend + backend** con foco
 
 ### Vista mobile
 ### Home
-![Vista mobile](./capturas/home.jpg)
+![Vista mobile](./capturas/home.png)
 
 ### Estudiantes
-![Vista Estudiantes](capturas/estudiantes.jpg)
+![Vista Estudiantes](capturas/estudiantes.png)
 
 ### Cursos
-![Vista Cursos](capturas/cursos.jpg)
+![Vista Cursos](capturas/cursos.png)
