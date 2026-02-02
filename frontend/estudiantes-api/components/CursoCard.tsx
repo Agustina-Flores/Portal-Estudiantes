@@ -33,10 +33,12 @@ export const CursoCard = ({ curso }: CursoCardProps) => {
      return (
         <View style={estilos.card}>
           <View style={estilos.iconoContainer}>
-          <Image
-            source={iconMap[curso.icono]}
-            style={{ width: 50, height: 50, marginBottom: 10 }}
-          />
+          {iconMap[curso.icono] && (
+            <Image
+              source={iconMap[curso.icono]}
+              style={{ width: 50, height: 50, marginBottom: 10 }}
+            />
+          )}
           </View>
             <Text style={estilos.nombre}>Nombre: {curso.nombre}</Text>
             <Text style={estilos.info}>Curso: {curso.descripcion}</Text>

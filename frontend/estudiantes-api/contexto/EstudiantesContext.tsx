@@ -19,8 +19,9 @@ export const EstudiantesProvider = ({ children }: { children: ReactNode }) => {
     console.log("CAMBIARON estudiantes EDITAR:", estudiantes);
   }, [estudiantes]);
 
-  const editarEstudiantes = async (id:string, estudiante: Estudiante) => { 
+const editarEstudiantes = async (id:string, estudiante: Estudiante) => { 
     
+    console.log("estudiante en contexto:", estudiante);
     const actualizado = await editarEstudianteApi(id, estudiante);
     console.log("actualizado despues de editar API:", actualizado);
 

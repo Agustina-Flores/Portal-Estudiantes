@@ -9,7 +9,7 @@
         "5"
       ],
       "promedio": 95,
-      "imagen": "http://192.168.100.104:3001/uploads/1764895197768_foto.jpg"
+      "imagen": "/uploads/1764895197768_foto.jpg"
     },
     {
       "id": "2",
@@ -20,7 +20,7 @@
         "6"
       ],
       "promedio": 75,
-      "imagen": "http://192.168.100.104:3001/uploads/1764896605451_foto.jpg"
+      "edad": 23
     },
     {
       "id": "3",
@@ -42,7 +42,28 @@
         "7"
       ],
       "promedio": 80,
-      "imagen": "http://192.168.100.107:3001/uploads/1765174598307_foto.jpg"
+      "imagen": "/uploads/1765174598307_foto.jpg",
+      "edad": 22
+    },
+    {
+      "id": "5",
+      "nombre": "Maria Perez",
+      "curso": [
+        "8",
+        "9",
+        "3"
+      ],
+      "promedio": 70
+    },
+    {
+      "id": "6",
+      "nombre": "Luis Gomez",
+      "curso": [
+        "10",
+        "13",
+        "6"
+      ],
+      "promedio": 78
     }
   ],
   "cursos": [
@@ -53,104 +74,221 @@
       "duracion": "6 semanas",
       "icono": "react",
       "programa": [
-      "Introducción a Hooks",
-      "UseEffect avanzado",
-      "Render Performance",
-      "Patrones de composición"
-    ],
+        "Introducción a Hooks",
+        "UseEffect avanzado",
+        "Render Performance",
+        "Patrones de composición"
+      ],
       "docente": "Juan Pérez",
-      "horarios": "Lunes y Miércoles - 18:00 a 20:00"     
+      "horarios": "Lunes y Miércoles - 18:00 a 20:00"
     },
     {
       "id": "2",
       "nombre": "Angular",
       "descripcion": "Fundamentos de Angular: módulos, servicios, componentes y manejo de rutas.",
       "duracion": "5 semanas",
-      "icono": "angular"
+      "icono": "angular",
+      "programa": [
+        "Introducción a Angular y TypeScript",
+        "Componentes y templates",
+        "Servicios e inyección de dependencias",
+        "Routing y navegación",
+        "Consumo de APIs con HttpClient"
+      ],
+      "docente": "Luisa Herrera",
+      "horarios": "Lunes  - 10:00 a 11:00"
     },
     {
       "id": "3",
       "nombre": "C#",
       "descripcion": "Curso orientado a objetos con C#, sintaxis, clases, interfaces y manejo de datos.",
       "duracion": "6 semanas",
-      "icono": "csharp"
+      "icono": "csharp",
+      "programa": [
+        "Introducción a C#",
+        "POO",
+        "Clases y objetos",
+        "Interfaces",
+        "Acceso a datos"
+      ],
+      "docente": "Jose Martinez",
+      "horarios": "Lunes - 8:00 a 9:00"
     },
     {
       "id": "4",
       "nombre": "Node.js",
       "descripcion": "Backend con Node.js: Express, rutas, middlewares y conexión a base de datos.",
       "duracion": "5 semanas",
-      "icono": "nodejs"
+      "icono": "nodejs",
+      "programa": [
+        "Introducción a Node.js",
+        "Express y creación de APIs REST",
+        "Rutas y middlewares",
+        "Manejo de errores",
+        "Conexión a bases de datos"
+      ],
+      "docente": "Guillermo Martinez",
+      "horarios": "Lunes - 12:00 a 13:00"
     },
     {
       "id": "5",
       "nombre": "Java",
       "descripcion": "Programación orientada a objetos con Java, colecciones, excepciones y archivos.",
       "duracion": "8 semanas",
-      "icono": "java"
+      "icono": "java",
+      "programa": [
+        "Introducción a Java",
+        "Clases y objetos",
+        "Herencia y polimorfismo",
+        "Colecciones",
+        "Manejo de excepciones"
+      ],
+      "docente": "Paula Perez",
+      "horarios": "Martes - 8:00 a 9:00"
     },
     {
       "id": "6",
       "nombre": "Sql Server",
       "descripcion": "Consultas SQL, creación de tablas, stored procedures y administración básica.",
       "duracion": "4 semanas",
-      "icono": "sql"
+      "icono": "sql",
+      "programa": [
+        "Introducción a SQL Server",
+        "Consultas SELECT",
+        "Creación de tablas y relaciones",
+        "Stored Procedures",
+        "Administración básica"
+      ],
+      "docente": "Monica Perez",
+      "horarios": "Martes - 9:00 a 10:00"
     },
     {
       "id": "7",
       "nombre": "Python",
       "descripcion": "Fundamentos de Python: sintaxis, librerías básicas y automatización.",
       "duracion": "5 semanas",
-      "icono": "python"
+      "icono": "python",
+      "programa": [
+        "Introducción a Python",
+        "Variables y tipos de datos",
+        "Estructuras de control",
+        "Funciones y módulos",
+        "Automatización básica"
+      ],
+      "docente": "Eliana Carmona",
+      "horarios": "Martes - 11:00 a 12:00"
     },
     {
       "id": "8",
       "nombre": "Mongo DB",
       "descripcion": "Bases NoSQL: colecciones, documentos y consultas con MongoDB.",
       "duracion": "3 semanas",
-      "icono": "mongo"
+      "icono": "mongo",
+      "programa": [
+        "Introducción a NoSQL",
+        "MongoDB y documentos",
+        "CRUD en MongoDB",
+        "Consultas y filtros",
+        "Relaciones básicas"
+      ],
+      "docente": "Martin Gutierrez",
+      "horarios": "Miercoles - 11:00 a 12:00"
     },
     {
       "id": "9",
       "nombre": "Matematicas",
       "descripcion": "Principios matemáticos aplicados a programación y lógica computacional.",
       "duracion": "6 semanas",
-      "icono": "math"
+      "icono": "math",
+      "programa": [
+        "Lógica matemática",
+        "Álgebra básica",
+        "Funciones",
+        "Estructuras discretas",
+        "Aplicaciones en programación"
+      ],
+      "docente": "Johana Gutierrez",
+      "horarios": "Miercoles - 08:00 a 10:00"
     },
     {
       "id": "10",
       "nombre": "Ingles ",
       "descripcion": "Nivel inicial con foco en comprensión y comunicación básica.",
       "duracion": "8 semanas",
-      "icono": "english"
+      "icono": "english",
+      "programa": [
+        "Vocabulario básico",
+        "Gramática inicial",
+        "Comprensión lectora",
+        "Conversación básica",
+        "Inglés técnico inicial"
+      ],
+      "docente": "Maria Gutierrez",
+      "horarios": "Miercoles - 11:00 a 12:00"
     },
     {
       "id": "11",
       "nombre": "PostgreSQL",
       "descripcion": "Consultas SQL, triggers, funciones y administración básica en PostgreSQL.",
       "duracion": "5 semanas",
-      "icono": "postgresql"
+      "icono": "postgresql",
+      "programa": [
+        "Introducción a PostgreSQL",
+        "Consultas SQL",
+        "Funciones y triggers",
+        "Relaciones y claves",
+        "Administración básica"
+      ],
+      "docente": "Lucas Gutierrez",
+      "horarios": "Miercoles - 12:00 a 13:00"
     },
     {
       "id": "12",
       "nombre": "Git Hub",
       "descripcion": "Uso de Git y GitHub: ramas, merge, pull requests y buenas prácticas.",
       "duracion": "3 semanas",
-      "icono": "git"
+      "icono": "git",
+      "programa": [
+        "Introducción a Git",
+        "Repositorios y commits",
+        "Ramas y merge",
+        "GitHub y pull requests",
+        "Buenas prácticas"
+      ],
+      "docente": "Paula Gimenez",
+      "horarios": "Jueves - 10:00 a 11:00"
     },
     {
       "id": "13",
       "nombre": "Javascript",
       "descripcion": "Lógica de programación con JavaScript, funciones, arrays y eventos.",
       "duracion": "7 semanas",
-      "icono": "js"
+      "icono": "js",
+      "programa": [
+        "Variables y tipos",
+        "Funciones",
+        "Arrays y objetos",
+        "Eventos",
+        "Manipulación del DOM"
+      ],
+      "docente": "Julieta Gimenez",
+      "horarios": "Jueves - 11:00 a 13:00"
     },
     {
       "id": "14",
       "nombre": "GO",
       "descripcion": "lenguaje",
       "duracion": "8 semanas",
-      "icono": "go"
+      "icono": "go",
+      "programa": [
+        "Introducción a Go",
+        "Tipos y variables",
+        "Funciones",
+        "Structs e interfaces",
+        "Concurrencia básica"
+      ],
+      "docente": "Dario Gimenez",
+      "horarios": "Viernes - 11:00 a 13:00"
     }
   ]
 }

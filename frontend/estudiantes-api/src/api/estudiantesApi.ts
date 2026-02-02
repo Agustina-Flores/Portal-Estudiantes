@@ -1,9 +1,10 @@
 import axios from "axios";
 import {Estudiante} from "../../types/Estudiante";
+import { API_URL } from "@/config/api";
 
 export const apiCliente = axios.create({
   //baseURL: "http://localhost:4000",
-  baseURL: "http://192.168.1.14:3001",
+  baseURL: API_URL,
 });
  
 

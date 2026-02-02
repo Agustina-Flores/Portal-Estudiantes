@@ -7,7 +7,6 @@ export default function Footer() {
         <View style={styles.footer}>
             <Text style={styles.footerText}>© 2025 Portal de Estudiantes</Text>
             <Text style={styles.footerText}>Desarrollado por Agustina Flores</Text>
-            <Text style={styles.footerVersion}>v1.0.0</Text>
           </View>
     );
 }
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
 
 footerText:{
   color: "#fff",
-  fontSize: 20,
+  fontSize: 15,
 },
 
 footerVersion:{

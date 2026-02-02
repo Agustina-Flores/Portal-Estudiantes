@@ -1,50 +1,68 @@
-# Welcome to your Expo app 👋
+# 📚 Sistema de Gestión de Estudiantes
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicación web para la gestión de estudiantes, que permite crear, editar, listar y eliminar registros, asociándolos a distintos cursos.
 
-## Get started
+Este proyecto fue desarrollado como práctica de **frontend + backend** con foco en la correcta comunicación entre capas, manejo de estado y estructura del código.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🚀 Funcionalidades
 
-2. Start the app
+- 📄 Listado de estudiantes
+- ➕ Alta de estudiantes
+- ✏️ Edición de estudiantes
+- 🗑️ Eliminación de estudiantes
+- 📚 Asociación de estudiantes a múltiples cursos
+- 📊 Gestión de promedio y edad
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🛠️ Tecnologías utilizadas
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Frontend
+- React Native (Expo)
+- TypeScript
+- Axios
+- Componentes controlados y manejo de estado
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Backend
+- Node.js (JavaScript)
+- Express
+- JSON Server (API REST simulada para desarrollo)
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## 🧠 Decisiones técnicas
+
+- Se utilizó **JSON Server** para simular una API REST y enfocarse en la lógica de frontend y consumo de endpoints.
+- El proyecto prioriza **estabilidad, claridad del código y estructura**.
+- Arquitectura modular separando componentes, hooks y servicios para facilitar escalabilidad y mantenimiento.
+---
+
+## 📂 Estructura del proyecto
 
 ```bash
-npm run reset-project
-```
+├── backend
+│   ├── db.json
+│   ├── server.js
+│
+├── frontend
+│   ├── components
+│   ├── hooks
+│   ├── services
+│   ├── screens
+│   └── types
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+📱 Diseñado con enfoque mobile-first y probado en dispositivos reales.
 
-## Learn more
+## 📱 Capturas
 
-To learn more about developing your project with Expo, look at the following resources:
+### Vista mobile
+### Home
+![Vista mobile](capturas/home.jpg)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Estudiantes
+![Vista Estudiantes](capturas/estudiantes.jpg)
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Cursos
+![Vista Cursos](capturas/cursos.jpg)

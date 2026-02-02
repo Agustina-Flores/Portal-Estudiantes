@@ -4,15 +4,14 @@ import { EstudianteCard } from "@/components/EstudianteCard";
 import { LinearGradient } from 'expo-linear-gradient';
 import { useToast } from "react-native-toast-notifications";
 import { Estudiante } from "@/types/Estudiante";
-import Footer from "./Footer";
 import { useRouter } from "expo-router";
 import { useEstudiantes } from "../hooks/useEstudiantes";
-import { useUpload } from "../hooks/useUpload";
-import { Image } from "react-native";
-import * as ImagePicker from "expo-image-picker";
 import { Buscador } from "@/components/Buscador";
 import { useFetchCursos } from "../hooks/useFetchCursos";
-import Checkbox from 'expo-checkbox';
+import Checkbox from 'expo-checkbox'; 
+import { useFocusEffect } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
+import { useCallback } from "react";
 
 export default function Students() {
 
@@ -23,8 +22,6 @@ export default function Students() {
   const [modalEditarVisible, setModalEditarVisible] = useState(false);
   const [idAEliminar, setIdAEliminar] = useState<number | null>(null);
   const [estudianteEnEdicion, setEstudianteEnEdicion] = useState<Estudiante | null>(null);
-  const [imagenUri, setImagenUri] = useState<string | null>(null);
-  const { subirImagen} = useUpload();
   const [nombre, setNombre] = useState("");
   const [curso, setCurso] = useState("");
   const [promedio, setPromedio] = useState(""); 
@@ -34,25 +31,32 @@ export default function Students() {
   const { cursos } = useFetchCursos();
   const [seleccionados, setSeleccionados] = useState<number[]>([]);
   const [cursosEditar, setCursosEditar] = useState<number[]>([]);
+  const navigation = useNavigation();
 
+  useFocusEffect(
+      useCallback(() => {
+        navigation.setOptions({
+          tabBarStyle: { display: "none" },
+        });
+
+        return () => {
+          navigation.setOptions({
+            tabBarStyle: undefined,
+          });
+        };
+      }, [])
+  );
+   
   const handleAgregar = async () => {
     const ultimoId = estudiantes.length > 0
     ? Number(estudiantes[estudiantes.length - 1].id)
     : 0;
-
-    let imagenSubidaUrl: string | undefined = undefined;
-
-    if (imagenUri) {
-    imagenSubidaUrl = await subirImagen(imagenUri);
-    }
-    console.log("URL devuelta:", imagenSubidaUrl);
-    
+ 
     const nuevoParaEnviar =({ 
       id: String(ultimoId + 1),
       nombre,
       curso : seleccionados,
-      promedio: Number(promedio),
-      imagen: imagenSubidaUrl,
+      promedio: Number(promedio), 
     });
 
     console.log("antes de agregar" , nuevoParaEnviar);
@@ -62,7 +66,6 @@ export default function Students() {
     setCurso("");
     setPromedio("");
     setEdad("");
-    setImagenUri(null);
     setModalAgregarVisible(false);
 
     console.log("nuevo estudiante ya listo" , nuevoEstudiante);
@@ -82,18 +85,6 @@ export default function Students() {
       }
     });
   }
-
-  const seleccionarImagen = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      quality: 0.8,
-    });
-
-    console.log("imagen" , result);
-    if (!result.canceled) {
-      setImagenUri(result.assets[0].uri);
-    }
-  };
 
   const abrirConfirmacion = (id: any ) => {
   setIdAEliminar(id);
@@ -144,34 +135,34 @@ export default function Students() {
     id: String(estudiante.id), 
     edad: estudiante.edad ? Number(estudiante.edad) : undefined,
     promedio: Number(estudiante.promedio)
-  });
-
+    });
+    
     console.log(" actualizar Estudiante despues" , estudianteEnEdicion);
     setModalEditarVisible(true);
   }
-  const guardarCambios = async () => {
-    
+
+  const guardarCambios = async () => { 
     try {
       if (!estudianteEnEdicion?.id) {
         console.error("El estudiante no tiene ID");
         return;
       }
-
+    
       const estudianteParaEnviar = {
           ...estudianteEnEdicion,
           id: String(estudianteEnEdicion.id),
           edad: estudianteEnEdicion.edad ? Number(estudianteEnEdicion.edad) : undefined,
           promedio: Number(estudianteEnEdicion.promedio),
-          curso: cursosEditar
+          curso: cursosEditar, 
         };
-
-      await editarEstudiantes(
-      estudianteParaEnviar.id, 
+    
+    await editarEstudiantes(
+      estudianteParaEnviar.id,
       estudianteParaEnviar
-      );
-      console.log("estudiante a editar" , estudianteParaEnviar);
-      console.log("estudiantes" , estudiantes);
-      setModalEditarVisible(false);
+    );
+
+    console.log("estudiante a editar", estudianteParaEnviar);
+    setModalEditarVisible(false);
       
     } catch (error) {
       console.error(error);
@@ -208,14 +199,14 @@ export default function Students() {
       style={styles.background}
     >
        <View style={styles.container}>
-         <View style={styles.container}>
+        <View style={styles.header}>
+           <Text style={styles.title}>Estudiantes</Text>       
           <Buscador
             value={busqueda}
             onChange={setBusqueda}
             placeholder="Buscar estudiante..."
           />
          </View>
-          <Text style={styles.title}>Estudiantes</Text>       
          <FlatList
           data={busqueda.trim() === "" ? estudiantes : filtrosEstudiantes}
           keyExtractor={(item) => item.id!.toString()}
@@ -236,27 +227,7 @@ export default function Students() {
         <Modal visible={modalAgregarVisible} transparent animationType="fade">
           <View style={styles.modalContainer}>
             <View style={styles.modalCard}>
-              <Text style={styles.modalTitle1}>Agregar Estudiante</Text>
-              {imagenUri && (
-              <Image
-                source={{ uri: imagenUri }}
-                style={{
-                  width: 90,
-                  height: 90,
-                  borderRadius: 10,
-                  alignSelf: "center",
-                  marginBottom: 10,
-                }}
-              />
-            )}
-
-          <TouchableOpacity
-            style={styles.btnSeleccionar}
-            onPress={seleccionarImagen}
-          >
-          <Text style={styles.btnText}>Elegir Imagen</Text>
-        </TouchableOpacity>
-                          
+              <Text style={styles.modalTitle1}>Agregar Estudiante</Text>             
               <TextInput
                 style={styles.input}
                 placeholder="Nombre"
@@ -398,10 +369,11 @@ export default function Students() {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                  style={styles.btnGuardar}
-                  onPress={guardarCambios} >
-                  <Text style={styles.btnText}>Guardar</Text>
-                </TouchableOpacity>
+                style={styles.btnGuardar}
+                onPress={guardarCambios}
+              >
+                <Text style={styles.btnText}>Guardar Cambios</Text>
+              </TouchableOpacity>
             </View>
           </View>
           </View>
@@ -413,34 +385,41 @@ export default function Students() {
       >
         <Text style={styles.verCursosText}>Ver todos los cursos</Text>
       </TouchableOpacity>
-      </View>  
-      <Footer></Footer>
+      </View>   
     </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   background: {
-    flex: 1,
+   flex: 1,
   },
   container: {
     flex: 1,
-    padding: 16,
+    width: "100%",
+    paddingHorizontal: 16,
+    paddingTop: 34,
+    paddingBottom: 120,
+  },
+  header: {
+    width: "100%",
+    marginTop: 50,     
+    marginBottom: 12,
   },
   title: {
     fontSize: 26,
     fontWeight: "bold",
     color: "#ffffff",
-    marginBottom: 20,
+    marginBottom: 10,   
     alignSelf: "center",
   },
   addButton: {
     position: "absolute",
     bottom: 30,
     right: 30,
-    backgroundColor: "#825cff",
-    width: 60,
-    height: 60,
+    backgroundColor: "#7c6cff",
+    width: 50,
+    height: 50,
     borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",
@@ -453,8 +432,8 @@ const styles = StyleSheet.create({
 
   addButtonText: {
     color: "white",
-    fontSize: 35,
-    marginTop: -3,
+    fontSize: 30,
+    marginTop: -2,
   },
   // Modal
   modalContainer: {
@@ -584,9 +563,11 @@ const styles = StyleSheet.create({
   verCursosBtn: {
   marginTop: 20,
   backgroundColor: "#4a90e2",
-  padding: 12,
+  paddingVertical: 12,
+  paddingHorizontal: 28,
   borderRadius: 10,
-  alignItems: "center"
+  alignItems: "center",
+  alignSelf: "center",
   },
   verCursosText: {
   color: "#fff",

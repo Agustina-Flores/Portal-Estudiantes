@@ -3,6 +3,5 @@ export type Estudiante = {
   nombre: string;
   curso: number[];
   promedio: number;  
-  edad?: number; 
-  imagen?: string;
+  edad?: number;
 }

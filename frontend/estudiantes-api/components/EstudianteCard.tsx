@@ -12,6 +12,7 @@ type EstudianteCardProps = {
 export const EstudianteCard = ({ estudiante, onEliminar, onEditar }: EstudianteCardProps) => {
   const router = useRouter();
 
+  console.log("estudiante id", estudiante.id);
 return (
    <View style={estilos.card}>
         <Text style={estilos.nombre}>Nombre: {estudiante.nombre}</Text>
@@ -52,7 +53,7 @@ const estilos = StyleSheet.create({
   card: {
     backgroundColor: "#1a1a1a",
     borderRadius: 16,
-    padding: 18,
+    padding: 14,
     marginBottom: 16,
     elevation: 6,
     shadowColor: "#000",
@@ -61,6 +62,7 @@ const estilos = StyleSheet.create({
     shadowRadius: 6,
     borderLeftWidth: 4,
     borderLeftColor: "#9b1bbd",
+    
   },
  nombre: {
     fontSize: 20,
