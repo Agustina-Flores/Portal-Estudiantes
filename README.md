@@ -55,9 +55,7 @@ Este proyecto fue desarrollado como práctica de **frontend + backend** con foco
 
 📱 Diseñado con enfoque mobile-first y probado en dispositivos reales.
 
-## 📱 Capturas – vista mobile
-
-### Vista mobile
+## 📱 Capturas (vista mobile)
 
 ### Home
 ![Home](https://raw.githubusercontent.com/Agustina-Flores/Portal-Estudiantes/main/capturas/home.png)
