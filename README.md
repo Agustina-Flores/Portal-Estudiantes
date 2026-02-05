@@ -57,8 +57,12 @@ Este proyecto fue desarrollado como práctica de **frontend + backend** con foco
 
 ## 📱 Capturas (vista mobile)
 
+### Home
 ![Home](https://raw.githubusercontent.com/Agustina-Flores/Portal-Estudiantes/main/capturas/home.png)
 
+### Estudiantes
 ![Estudiantes](https://raw.githubusercontent.com/Agustina-Flores/Portal-Estudiantes/main/capturas/estudiantes.png)
 
+### Cursos
 ![Cursos](https://raw.githubusercontent.com/Agustina-Flores/Portal-Estudiantes/main/capturas/cursos.png)
+
